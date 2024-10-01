@@ -1,4 +1,4 @@
-/*
+package SequencialsAlternatives;/*
  * Autor:  Nom Cognom1 Cognom2
  * Data:   dd/mm/aa
  * Versió: 1.0
@@ -21,3 +21,8 @@
                      |   
   		               |   
 */
+public class Caracter{
+    public static void main(String [] args){
+        System.out.println("Hola");
+    }
+}
