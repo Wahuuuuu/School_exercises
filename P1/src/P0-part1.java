@@ -1,1 +1,0 @@
-//podeu provar aquí exercicis P0
