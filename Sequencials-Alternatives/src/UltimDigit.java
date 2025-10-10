@@ -1,24 +1,30 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
- * Versió: 1.0
+ * author:   Yanzhe Chen
+ * data:     09/10/2025
+ * version:  1.0
  */
 
 /*
- * P1 - Prog 24-25
- * Exercici 1.	Feu un programa que donat un nombre enter introduït
- * per teclat per l'usuari, mostra per pantalla la seva última xifra.
- * Per exemple, si l’usuari introdueix 143, es mostra per pantalla el 3.
+ * Feu un programa que donat un nombre enter introduït per teclat
+ * per l'usuari, mostraper pantalla la seva última xifra.
  */
 
-
 /* Taula de tests
-  Entrada            | Sortida esperada
-  -------------------------------------
-  123                |   3
-  4                  |   4
-  78956              |   6
-  2147483648		     |   error d'execucio: java mostra una excepció per enter fora de rang
-*/
-public class UltimDigit {
+ * Entrada             | Sortida esperada
+ * 123                 | 3
+ */
+
+import java.util.Scanner;
+public class UltimDigit{
+	public static void main(String[] arg){
+
+	int number, lastDigit;
+	Scanner sc = new Scanner (System.in);
+	
+	System.out.println ("Da me un numero de tipo int: ");
+	number = sc.nextInt ();
+	
+	lastDigit = number % 10;
+	System.out.println ("La última cifra del número es " + lastDigit);
+	}
 }
