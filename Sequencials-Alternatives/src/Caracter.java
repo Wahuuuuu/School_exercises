@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   10/10/2025
  * Versió: 1.0
  */
 
@@ -16,13 +16,31 @@
 /* Taula de tests
   Entrada            | Sortida esperada
   -------------------------------------
-                     |
-                     |
-                     |
-  		               |
+  Hola 1             | A la posició 1 està el caràcter o
+  Hola 4             | Index no correcte
+  Hola -1            | Index no correcte
 */
+
+import java.util.Scanner;
 public class Caracter{
     public static void main(String [] args){
-        System.out.println("Prova des de Caracter");
+        Scanner sc = new Scanner(System.in);
+	String cadena;
+	int index;
+	
+	System.out.println ("Dame una cadena de carácteres y un index, "
+			   + "separados por un espacio: ");
+	cadena = sc.next();
+	index = sc.nextInt();
+
+	// El index es correcto cuando es igual o más grande que zero, y al
+	// mismo tiempo más pequeño que el número de carácteres de la cadena.
+	if (index >= 0 && index < cadena.length() ) {
+		System.out.println("A la posició " + index 
+				 + " está el caràcter " + cadena.charAt(index));
+	}
+	else {
+		System.out.println ("Index no correcte");
+	}
     }
 }
