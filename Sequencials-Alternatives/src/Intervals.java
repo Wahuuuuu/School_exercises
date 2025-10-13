@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   14/10/2025
  * Versió: 1.0
  */
 
