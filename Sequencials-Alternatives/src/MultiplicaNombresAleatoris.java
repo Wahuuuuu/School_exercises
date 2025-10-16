@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   15/10/2025
  * Versió: 1.0
  */
 
@@ -18,12 +18,29 @@
 
 
 /* Taula de tests
-  Entrada            | Sortida esperada
+  Entrada             | Sortida esperada
   -------------------------------------
-                     |
-                     |
-                     |
-  		               |
+  El nombre correcte  | "Ben fet!"
+  El nombre amb error | "Has d’estudiar la taula de multiplicar"
+  No es un nombre     | ERROR
 */
+
+import java.util.Scanner;
 public class MultiplicaNombresAleatoris {
+	public static void main(String[] arg){
+		Scanner sc = new Scanner(System.in);
+		int x = (int) (Math.random() * 10);
+		int y = (int) (Math.random() * 10);
+		int sum;
+
+		System.out.printf("%d * %d = ", x, y);
+		sum = sc.nextInt();
+
+		if (sum == x * y){
+			System.out.println("Ben fet!");
+		}
+		else {
+			System.out.println("Has d’estudiar la taula de multiplicar");
+		}
+	}
 }
