@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   18/10/2025
  * Versió: 1.0
  */
 
@@ -14,12 +14,34 @@
 
 
 /* Taula de tests
-  Entrada            | Sortida esperada
-  -------------------------------------
-                     |
-                     |
-                     |
+   Entrada              | Sortida esperada
+   -------------------------------------
+   Avui fa molta calor. | La frase té 8 vocals
+   hhhhllll             | La frase té 0 vocals
+   1276345%&/$/&        | La frase té 0 vocals
   		               |
 */
+import java.util.Scanner;
 public class CompteVocals {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		String frase;
+		char cha;
+		int nvocals = 0;
+
+		System.out.println("Escriu una frase: ");
+		frase = sc.next();
+
+		frase = frase.toLowerCase();
+		for (int i = 0; i < frase.length(); i++){
+			cha = frase.charAt(i);
+			if (cha == 'a' || cha == 'e'
+			 || cha == 'i' || cha == 'o'
+			 || cha == 'u'){
+				nvocals++;
+			}
+		}
+
+                System.out.printf("La frase té %d vocals%n", nvocals);
+	}
 }
