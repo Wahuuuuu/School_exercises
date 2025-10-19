@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   19/10/2025
  * Versió: 1.0
  */
 
@@ -16,10 +16,31 @@
 /* Taula de tests
   Entrada            | Sortida esperada
   -------------------------------------
-                     |
-                     |
-                     |
-  		               |
+  Refer              | Palindrom
+  ahir               | No palindrom
+  $%&456654&%$       | Palindrom
 */
+
+import java.util.Scanner;
 public class Palindrom {
+	public static void main(String[] arg){
+		Scanner sc = new Scanner(System.in);
+		String palaura;
+
+		System.out.println("Indicar una palaura: ");
+		palaura = sc.next();
+		palaura = palaura.toLowerCase();
+		int length = palaura.length();
+
+		boolean isPalindrom = true;
+		int i = 0;
+		int edge = (int) Math.ceil((length - 1) / 2.0);
+		while(i < edge && isPalindrom){
+			isPalindrom = palaura.charAt(i) == palaura.charAt(length - 1 - i);
+			i++;
+		}
+
+		if (isPalindrom) System.out.println("Palíndrom");
+		else System.out.println("No palíndrom");
+	}
 }
