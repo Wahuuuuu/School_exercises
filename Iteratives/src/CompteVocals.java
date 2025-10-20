@@ -30,7 +30,7 @@ public class CompteVocals {
 		int nvocals = 0;
 
 		System.out.println("Escriu una frase: ");
-		frase = sc.next();
+		frase = sc.nextLine();
 
 		frase = frase.toLowerCase();
 		for (int i = 0; i < frase.length(); i++){
