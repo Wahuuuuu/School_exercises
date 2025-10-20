@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   20/10/2025
  * Versió: 1.0
  */
 
@@ -33,5 +33,42 @@
  */
 
 /* NO es necessari fer Taula de tests */
+
+import java.util.*;
 public class Nim {
+	public static void main(String[] arg){
+		Scanner s = new Scanner(System.in);
+		Random r = new Random();
+		int totFitxes; boolean usersRound;
+
+		totFitxes = 20 + r.nextInt(10);
+		System.out.printf("Juguem amb %d fitxes.%n", totFitxes);
+
+		usersRound = r.nextBoolean();
+		System.out.print(usersRound ? "Comences tú" : "Comenca l'ordinador ");
+
+		int takeFitxes;
+		while (totFitxes > 0){
+			if (usersRound){
+				System.out.printf("%nQuantes fitxes agafes (1 or 2)?%n");
+				takeFitxes = s.nextInt();
+				totFitxes -= takeFitxes;
+
+				usersRound = !usersRound;
+			}
+			else {
+				takeFitxes = r.nextInt(2) + 1;
+				System.out.printf("L'ordinador agafa %d fitxes ", takeFitxes);
+				totFitxes -= takeFitxes;
+
+				usersRound = !usersRound;
+			}
+			
+			// Avoid -1 fixes, it doesn't make sense
+			if (totFitxes <= 0) System.out.print("Queden 0 fitxes");
+			else System.out.printf("Queden %d fitxes ", totFitxes);			
+		}
+
+		System.out.println(usersRound ? " L'ordinador ha guanyat" : " Has guanyat!");
+	}
 }
