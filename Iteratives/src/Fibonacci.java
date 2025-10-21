@@ -1,6 +1,6 @@
 /*
- * Autor:  Nom Cognom1 Cognom2
- * Data:   dd/mm/aa
+ * Autor:  Yanzhe Chen
+ * Data:   21/10/2025
  * Versió: 1.0
  */
 
@@ -17,10 +17,31 @@
 /* Taula de tests
   Entrada            | Sortida esperada
   -------------------------------------
-                     |
-                     |
-                     |
+  10                 | 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+  0                  | 0
+  1                  | 1
   		               |
 */
+
+import java.util.Scanner;
 public class Fibonacci {
+	public static void main(String[] arg){
+		Scanner sc = new Scanner(System.in);
+		int n, a = 0, b = 1;
+
+		System.out.println("Introdueix un nombre: ");
+		n = sc.nextInt();
+
+		if (n == 0) System.out.println("0");
+		else{
+			System.out.print("1");
+			for (int i = 1; i < n; i++){
+				System.out.printf(", %d", a + b);
+
+				b += a;
+				a = b - a;
+			}
+			System.out.printf("%n");
+		}	
+	}
 }
